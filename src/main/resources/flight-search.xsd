@@ -35,19 +35,7 @@
     </xs:complexType>
 
     <!-- Service Operations -->
-    <xs:element name="AvailabilitySearchRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="request" type="tns:SearchRequest"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="AvailabilitySearchRequest" type="tns:SearchRequest"/>
+    <xs:element name="AvailabilitySearchResponse" type="tns:SearchResult"/>
 
-    <xs:element name="AvailabilitySearchResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="result" type="tns:SearchResult"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 </xs:schema>

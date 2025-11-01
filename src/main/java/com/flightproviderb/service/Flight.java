@@ -4,6 +4,7 @@ import com.flightproviderb.config.LocalDateTimeAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,14 +12,25 @@ import java.time.LocalDateTime;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Flight {
 
+
+	@XmlElement(name = "flightNumber", namespace = "http://flightproviderb.service.com")
 	private String flightNumber;
+
+	@XmlElement(name = "departure", namespace = "http://flightproviderb.service.com")
 	private String departure;
+
+	@XmlElement(name = "arrival", namespace = "http://flightproviderb.service.com")
 	private String arrival;
 
+	@XmlElement(name = "departuredatetime", namespace = "http://flightproviderb.service.com")
 	@XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
 	private LocalDateTime departuredatetime;
+
+	@XmlElement(name = "arrivaldatetime", namespace = "http://flightproviderb.service.com")
 	@XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
 	private LocalDateTime arrivaldatetime;
+
+	@XmlElement(name = "price", namespace = "http://flightproviderb.service.com")
 	private BigDecimal price;
 	
 

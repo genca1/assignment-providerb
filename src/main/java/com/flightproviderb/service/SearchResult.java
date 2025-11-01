@@ -1,12 +1,23 @@
 package com.flightproviderb.service;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name = "AvailabilitySearchResponse", namespace = "http://flightproviderb.service.com")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class SearchResult {
+
+	@XmlElement(name = "hasError", namespace = "http://flightproviderb.service.com")
 	private boolean hasError = false;
 
+	@XmlElement(name = "flightOptions", namespace = "http://flightproviderb.service.com")
 	private List<Flight> flightOptions = new ArrayList<>();
+
+	@XmlElement(name = "errorMessage", namespace = "http://flightproviderb.service.com")
 	private String errorMessage;
 
 	// Constructors
